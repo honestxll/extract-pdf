@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>上传内容</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-fileinput/5.0.1/css/fileinput.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container my-4">
+    <h3 class="my-5">请上传文件[图片/PDF]</h3>
+    <form enctype="multipart/form-data" action="/upload" method="post">
+      <div class="file-loading">
+        <input id="file" class="file" type="file" name="file" data-theme="gly">
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">上传</button>
+      <button type="reset" class="btn btn-outline-secondary">重置</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap-fileinput/5.0.1/js/fileinput.min.js"></script>
+  <script>
+    $(document).on('ready', function(){
+      $('#file').fileinput()
+    })
+  </script>
+</body>
+</html>

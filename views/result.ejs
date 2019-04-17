@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>得到内容</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-fileinput/5.0.1/css/fileinput.min.css"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container my-4">
+    <h3 class="mt-5">处理获得文字内容</h3>
+    <div class="clearfix my-3">
+      <button class="btn btn-primary float-right">复制</button>
+    </div>
+    <div class="alert alert-warning text-center text-muted">
+      <%- result%>
+    </div>
+  </div>
+
+  <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
+  <script>
+    $(function(){
+      new ClipboardJS('.btn', {
+        text: function (trigger) {
+          const text = trigger.parentElement.nextElementSibling.innerText
+          return text
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>
